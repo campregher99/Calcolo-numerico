@@ -7,7 +7,6 @@ function [] = plotSave(x,y,titolo,legenda,formato)
     %legenda:   array di stringhe delle legende [leg1,leg2,...,legn]
     %formato:   array di tipi di linea ["--","*",...,"."]
 
-figure
 for i = 1:length(x)
     if nargin >= 5
         plot(cell2mat(x(i)),cell2mat(y(i)),formato(i))
@@ -17,8 +16,8 @@ for i = 1:length(x)
     hold on
 end
 title(titolo)
-if nargin >= 4 && length(legenda) > 1
-    legend(legenda)
+if nargin >= 4 && length(legenda) >= length(x)
+    legend(legenda,"location","best")
 end
 savefig(titolo)
 end

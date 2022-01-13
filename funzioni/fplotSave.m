@@ -6,8 +6,7 @@ function [] = fplotSave(funs,interval,titolo,legenda,formato)
     %titolo:    titolo del grafico e nome della figura salvata
     %legenda:   array di stringhe delle legende [leg1,leg2,...,legn]
     %formato:   array di tipi di linea ["--","*",...,"."]
-    
-figure
+
 for i = 1:length(funs)
     if nargin >= 5
         fplot(funs(i),interval,formato(i))
@@ -17,8 +16,8 @@ for i = 1:length(funs)
     hold on
 end
 title(titolo)
-if nargin >= 4 && length(legenda) > 1
-    legend(legenda)
+if nargin >= 4 && length(legenda) >= length(funs)
+    legend(legenda,"location","best")
 end
 savefig(titolo)
 end

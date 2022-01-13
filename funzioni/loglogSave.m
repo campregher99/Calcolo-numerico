@@ -17,8 +17,8 @@ for i = 1:length(x)
     hold on
 end
 title(titolo)
-if nargin >= 4 && length(legenda) > 1
-    legend(legenda)
+if nargin >= 4 && length(legenda) >= length(x)
+    legend(legenda,"location","best")
 end
 savefig(titolo)
 end

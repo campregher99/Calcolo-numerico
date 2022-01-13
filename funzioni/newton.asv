@@ -1,15 +1,9 @@
 function [zero,fz,iter,xk] = newton(f,x0,toll,Nmax)
 %INPUT:
-    %f:     funzione definita con "syms x"
-    %x0:    punto di partenza per la ricerca dello zero
+    %f: funzione
+    %x0: punto di partenza per la ricerca dello zero
     %toll:  tolleranza con cui si determina che un valore sia pari a zero
-    %Nmax:  numero massimo di iterazioni
-%OUTPUT:
-    %zero:  valore di x dove la funzione vale zero
-    %fz:    valore della funzione nel punto di zero
-    %iter:  numero di itarazioni adottate
-    %xk: valori intermedi di x0 adottati per raggiungere la soluzione
-
+    
 f1=diff(f);
 f=matlabFunction(f);
 df=matlabFunction(f1);

@@ -10,8 +10,7 @@ function [] = fcontourSave(funs,interval,titolo,legenda,color,option,value)
     %           ["r","b",...,"blk"]
     %option:    array di opzioni ["LevelList","LevelStep",...,""]
     %value:     valore associto all'opzione selezionata
-    
-figure
+
 if interval==0
     for i = 1:length(funs)
         if nargin >=7
@@ -64,8 +63,8 @@ else
     end
 end
 title(titolo)
-if nargin >= 4 && length(legenda) > 1
-    legend(legenda)
+if nargin >= 4 && length(legenda) >= length(funs)
+    legend(legenda,"location","best")
 end
 savefig(titolo)
 end

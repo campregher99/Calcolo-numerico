@@ -5,14 +5,14 @@ function [] = fsurfSave(funs,interval,titolo,legenda)
     %           plottate le funzioni [x_min,x_max,y_min,y_max]
     %titolo:    titolo del grafico e nome della figura salvata
     %legenda:   array di stringhe delle legende [leg1,leg2,...,legn]
-figure
+
 for i = 1:length(funs)
     fsurf(funs(i),interval)
     hold on
 end
 title(titolo)
-if nargin >= 4 && length(legenda) > 1
-    legend(legenda)
+if nargin >= 4 && length(legenda) >= length(funs)
+    legend(legenda,"location","best")
 end
 savefig(titolo)
 end
