@@ -16,20 +16,20 @@ if size(y0,1)==1
 else
    u(1,:)=y0';
 end
-for i=1:N;
-t=tt(i);
-y=u(i,:)';
-f1=f(t,y);
-t=t+h/2;
-y=u(i,:)'+h*f1/2;
-f2=f(t,y);
-y=u(i,:)'+h*f2/2;
-f3=f(t,y);
-t=t+h/2;
-y=u(i,:)'+h*f3;
-f4=f(t,y);
-tt(i+1)=tt(i)+h;
-u(i+1,:)=u(i,:)+h*(f1+2*f2+2*f3+f4)'/6;
+for i=1:N
+    t=tt(i);
+    y=u(i,:)';
+    f1=f(t,y);
+    t=t+h/2;
+    y=u(i,:)'+h*f1/2;
+    f2=f(t,y);
+    y=u(i,:)'+h*f2/2;
+    f3=f(t,y);
+    t=t+h/2;
+    y=u(i,:)'+h*f3;
+    f4=f(t,y);
+    tt(i+1)=tt(i)+h;
+    u(i+1,:)=u(i,:)+h*(f1+2*f2+2*f3+f4)'/6;
 end
 if size(u,2)==1
 u=u';

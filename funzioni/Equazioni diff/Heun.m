@@ -1,6 +1,6 @@
 function[tt,u]=Heun(f,t0,T,y0,N)
 % calcola la soluzione di un'equazione differenziale ordinaria
-% mediante il metodo di Eulero esplicito
+% mediante il metodo di Heun
 %  input: t0,T   estremi dell'intervallo
 %         N      numero dei passi
 %         f      function che contiene la funzione f (da valutare in (t,y))
@@ -12,21 +12,21 @@ function[tt,u]=Heun(f,t0,T,y0,N)
 h=(T-t0)/N;
 tt(1)=t0;
 if size(y0,1)==1
-   u(1,:)=y0;
+    u(1,:)=y0;
 else
-   u(1,:)=y0';
+    u(1,:)=y0';
 end
 for i=1:N;
-t=tt(i);
-y=u(i,:)';
-f1=f(t,y);
-t=t+h;
-y=u(i,:)'+h*f1;
-tt(i+1)=t;
-u(i+1,:)=u(i,:)+h*(f1+f(t,y))'/2;
+    t=tt(i);
+    y=u(i,:)';
+    f1=f(t,y);
+    t=t+h;
+    y=u(i,:)'+h*f1;
+    tt(i+1)=t;
+    u(i+1,:)=u(i,:)+h*(f1+f(t,y))'/2;
 end
 if size(u,2)==1
-u=u';
+    u=u';
 end
 
 
