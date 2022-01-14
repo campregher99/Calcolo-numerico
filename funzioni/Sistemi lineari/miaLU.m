@@ -5,7 +5,6 @@ function [A,U]=miaLU(A)
 %   triangolare inferiore della fattorizzazione LU
 %   di A, in U quello triangolare superiore.
 
-
 n=max(size(A));
 for k = 1:n-1 
   for i = k+1:n

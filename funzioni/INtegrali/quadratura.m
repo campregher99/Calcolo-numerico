@@ -1,4 +1,4 @@
-function[I]=quadratura(f,a,b,N,metodo)
+function[I,h]=quadratura(f,a,b,N,metodo)
 % a,b estremi dell'intervallo;
 % N numero delle suddivisioni;
 % alpha, beta nomi delle funzioni che descrivono il dominio;
