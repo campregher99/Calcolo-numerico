@@ -17,5 +17,6 @@ for n=0:N-1
    un=[un un(:,end)+f(t0+h*n,un(:,end))*h];
    tn=[tn tn(end)+h];
 end
+un=un';
 end
 

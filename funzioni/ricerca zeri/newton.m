@@ -14,7 +14,12 @@ f1=diff(f);
 f=matlabFunction(f);
 df=matlabFunction(f1);
 y=f(x0);
-dy=df(x0);
+try
+    dy=df(x0);
+catch
+    df=@(x) f1;
+    dy=df(x0);
+end
 delta=-y/dy;
 iter=0;
 if nargout>=4
