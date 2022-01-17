@@ -1,0 +1,44 @@
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep out; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+dbquit
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dbquit')" style="font-weight:bold">dbquit</a>
+Debug commands only allowed when stopped in debug mode.
+} 
+dbquit
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dbquit')" style="font-weight:bold">dbquit</a>
+Debug commands only allowed when stopped in debug mode.
+} 
+if system_dependent('IsDebugMode')==1, dbstep; end
+round(df(zero),3)
+
+ans =
+
+    0.0920
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+round(df(zero),3)
+
+ans =
+
+     0
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+round(df(zero),3)
+
+ans =
+
+   -5.0720
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+round(df(zero),3)
+
+ans =
+
+    7.2910
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
